@@ -1,0 +1,46 @@
+<div class="container py-4">
+    <table class="table">
+        <tr class="table-primary">
+            <th>Titulo</th>
+            <th>Creado el:</th>
+            <th>Contenido</th>
+            <th>URL Imagen</th>
+        </tr>
+        <% @posts.each do |post| %>
+            <tr>
+                <td><%= post.title %></td>
+                <td><%= post.created_at %></td>
+                <td><%= post.content.gsub "#{post.censor}", '' %></td>
+                <td><%= post.image_url %></td>
+            </tr>
+        <% end %>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Crear Post</h2>
+    <form method="get" action="/posts/create" id="create_posts">
+        <div class="mb-3">
+            <label for="title" class="form-label">Título</label>
+            <input type="title" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="content" class="form-label">Contenido</label>
+            <textarea type="content" class="form-control"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="censor" class="form-label">Palabra a censurar</label>
+            <input type="censor" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-check-label" for="exampleCheck1">URL imagen</label>
+            <input type="image_url" class="form-control">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Crear</button>
+
+    </form>
+</div>
