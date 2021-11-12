@@ -2,7 +2,7 @@
     <table class="table">
         <tr class="table-primary">
             <th>Titulo</th>
-            <th>Creado el:</th>
+            <th>Fecha</th>
             <th>Contenido</th>
             <th>URL Imagen</th>
         </tr>
@@ -17,27 +17,27 @@
     </table>
 </div>
 
-<div class="container">
+<div class="container mb-5">
     <h2>Crear Post</h2>
     <form method="get" action="/posts/create" id="create_posts">
         <div class="mb-3">
             <label for="title" class="form-label">Título</label>
-            <input type="title" class="form-control">
+            <input name="title" type="title" id="title" class="form-control">
         </div>
 
         <div class="mb-3">
             <label for="content" class="form-label">Contenido</label>
-            <textarea type="content" class="form-control"></textarea>
+            <textarea name="content" type="content" class="form-control"></textarea>
         </div>
 
         <div class="mb-3">
             <label for="censor" class="form-label">Palabra a censurar</label>
-            <input type="censor" class="form-control">
+            <input name="censor" type="censor" class="form-control">
         </div>
 
         <div class="mb-3">
             <label class="form-check-label" for="exampleCheck1">URL imagen</label>
-            <input type="image_url" class="form-control">
+            <input name="image_url" type="image_url" class="form-control">
         </div>
         
         <button type="submit" class="btn btn-primary">Crear</button>
